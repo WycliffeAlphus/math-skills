@@ -1,0 +1,30 @@
+package average
+
+import (
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+	"testing"
+)
+
+func TestAverage(t *testing.T) {
+	var numberS []int
+	fileName, err := os.ReadFile("data.txt")
+	if err != nil {
+		fmt.Fprintln(os.Stderr, `Error Reading File`)
+		os.Exit(1)
+	}
+	split := strings.Split(string(fileName), "\n")
+	for i := 0; i < len(split); i++ {
+		numb, err := strconv.Atoi(split[i])
+		if err != nil {
+			fmt.Println("Error splitting number")
+		}
+		numberS = append(numberS, numb)
+	}
+	found := Average(numberS)
+	if found != 132 {
+		t.Errorf("Found %v, want 132", found)
+	}
+}
