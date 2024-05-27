@@ -19,7 +19,7 @@ func main() {
 		// Print a message indicating the correct number of arguments and usage instructions
 		fmt.Fprintln(os.Stderr, ` The number of arguments should be 3
 		Usage : 
-				go run . <program name> <name of file: data.txt>
+				go run . <program name> <name of file>
 		`)
 	}
 	// Check if the number of command-line arguments is 2
@@ -77,7 +77,7 @@ func main() {
 			// Print a message indicating the expected third argument and usage instructions
 			fmt.Fprintln(os.Stderr, `The expected third argument should be data.txt
 		Usage: 
-			go run . [program name] <data file name>`)
+			go run . [program name] <data.txt>`)
 		}
 	}
 }
