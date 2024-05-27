@@ -30,7 +30,7 @@ The go program reads data from a file. The file path is passed as an argument to
 The program should be executed from the command line like this:
 
 >
-    $ go run your-program.go data.txt
+    $ go run program-name.go data.txt
 >
 
 ### Output Format
