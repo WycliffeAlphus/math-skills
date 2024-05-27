@@ -1,21 +1,12 @@
 package average
 
-import (
-	"fmt"
-	"math"
-)
+func Average(numbers []int) float64 {
+	var mean float64  // Initialize the mean variable to store the average
+	var total float64 // Initialize the total variable to store the sum of numbers
 
-func Average(number []int) float64 {
-	var mean float64
-	var total float64
-
-	for _, n := range number {
-		if n <= math.MaxInt || n >= math.MinInt {
-			total += float64(n)
-			mean = total / float64(len(number))
-		} else {
-			fmt.Printf("The %v is not within the expected range\n", number)
-		}
+	for _, n := range numbers { // Iterate over each number in the slice
+		total += float64(n)                  // Add the current number to the total sum
+		mean = total / float64(len(numbers)) // Calculate the mean by dividing the total sum by the number of elements
 	}
-	return mean
+	return mean // Return the calculated mean
 }
