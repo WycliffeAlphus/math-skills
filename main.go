@@ -34,7 +34,7 @@ func main() {
 					continue
 				}
 				numb, err := strconv.Atoi(split[i])
-				// Checking the type of error encountered by the Atoi function and tailoring the message according to the specidied message
+				// Checking the type of error encountered by the Atoi function and tailoring the message according to the specified message
 				if err != nil {
 					Error, ok := err.(*strconv.NumError)
 					if ok {
