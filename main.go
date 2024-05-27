@@ -17,7 +17,7 @@ func main() {
 	// Check if the number of command-line arguments is 1
 	if len(os.Args) == 1 {
 		// Print a message indicating the correct number of arguments and usage instructions
-		fmt.Fprintln(os.Stderr, ` The number of arguments should be 3
+		fmt.Fprintln(os.Stderr, ` The number of input arguments should be 2
 		Usage : 
 				go run . <program name> <name of file>
 		`)
@@ -75,7 +75,7 @@ func main() {
 			fmt.Printf("Standard Deviation: %v\n", int(math.Round(standard.Deviation(numberS))))
 		} else {
 			// Print a message indicating the expected third argument and usage instructions
-			fmt.Fprintln(os.Stderr, `The expected third argument should be data.txt
+			fmt.Fprintln(os.Stderr, `The expected second input argument should be data.txt
 		Usage: 
 			go run . [program name] <data.txt>`)
 		}
