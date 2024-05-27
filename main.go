@@ -33,6 +33,11 @@ func main() {
 				fmt.Fprintln(os.Stderr, `Error Reading File`)
 				return
 			}
+			// Check if the read file is empty
+			if len(fileName) == 0 {
+				fmt.Fprintln(os.Stderr, "The data file is empty")
+				os.Exit(1)
+			}
 			var numberS []int
 			// Split the file content by newline character
 			split := strings.Split(string(fileName), "\n")
