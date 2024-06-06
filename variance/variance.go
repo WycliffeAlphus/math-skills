@@ -6,6 +6,9 @@ import "math-skills/average"
 //
 // It is the average of the squared differences from the mean.
 func Variance(numbers []int) float64 {
+	if len(numbers) < 1 {
+		return 0
+	}
 	mean := average.Average(numbers)
 	var sum float64 = 0
 	for _, n := range numbers {
