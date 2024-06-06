@@ -1,12 +1,16 @@
 package average
 
+// It returns the mean of given data sets
 func Average(numbers []int) float64 {
-	var mean float64  // Initialize the mean variable to store the average
-	var total float64 // Initialize the total variable to store the sum of numbers
-
-	for _, n := range numbers { // Iterate over each number in the slice
-		total += float64(n)                  // Add the current number to the total sum
-		mean = total / float64(len(numbers)) // Calculate the mean by dividing the total sum by the number of elements
+	if len(numbers) < 1 {
+		return 0
 	}
-	return mean // Return the calculated mean
+	var mean float64
+	var total float64
+
+	for _, n := range numbers {
+		total += float64(n)
+		mean = total / float64(len(numbers))
+	}
+	return mean
 }
